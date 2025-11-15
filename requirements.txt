@@ -3,5 +3,5 @@ requests
 PyMuPDF
 firebase-admin
 google-auth
-google-auth-transport-requests
+google-auth-requests
 google-oauth
