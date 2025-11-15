@@ -437,7 +437,7 @@ def show_results():
 
 set_initial_state()
 st.set_page_config(
-    page_title="Gemini Quiz Generator", 
+    page_title="Quizer | AI Quiz Generator", 
     page_icon="🤖", 
     layout="wide"
 )
