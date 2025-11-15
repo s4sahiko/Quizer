@@ -1,0 +1,2 @@
+# Quizer
+ Quizer-AI is a cutting-edge platform powered by advanced Artificial Intelligence, designed to revolutionize the way we create, take, and analyze quizzes and assessments.  Forget tedious manual quiz creation! Quizer-AI leverages the power of Large Language Models (LLMs) and deep learning to instantly generate high-quality, relevant quizzes on any topic, at any difficulty level, from a simple text input or an uploaded document.
