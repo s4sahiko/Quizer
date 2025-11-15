@@ -3,20 +3,16 @@ import json
 import requests
 import fitz # PyMuPDF for PDF text extraction
 
-#Firebase Imports and Setup
+# --- Firebase Initialization Block ---
 try:
-    from firebase_admin import initialize_app, credentials
-    from firebase_admin import firestore, auth as firebase_auth
-except ImportError:
-    class MockFirebase:
-        def __init__(self):
-            self.db = None
-            self.auth = None
-            self.user_id = "mock_user"
-    mock_firebase = MockFirebase()
-    db = mock_firebase.db
-    auth = mock_firebase.auth
-    userId = mock_firebase.user_id
+    creds_dict_str = st.secrets["firebase_creds"]
+    creds_dict = json.loads(creds_dict_str)
+    cred = credentials.Certificate(creds_dict)
+    if not firebase_admin._apps:
+        firebase_admin.initialize_app(cred)
+except Exception as e:
+    st.error(f"Error initializing Firebase. Please check your secrets: {e}")
+    st.stop() # Stop the app if initialization fails
 
 #  Gemini API Configuration 
 API_KEY = st.secrets.get("GEMINI_API_KEY", "")  
